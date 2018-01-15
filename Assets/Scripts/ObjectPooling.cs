@@ -16,11 +16,14 @@ public class ObjectPooling : MonoBehaviour
     private float timerSinceLastSpawn;
     private float spawnXPosition = 10f;
     private int currentObject = 0;
+    private DrawLine drawLine; 
 
 	// Use this for initialization
 	void Start ()
     {
         objects = new GameObject[objectPoolSize];
+        drawLine = gameObject.GetComponent<DrawLine>();
+
         for (int i = 0; i < objectPoolSize; i++)
         {
             objects[i] = (GameObject)Instantiate(objectPrefab, objectPoolPosition, Quaternion.identity);
@@ -32,7 +35,7 @@ public class ObjectPooling : MonoBehaviour
     {
         timerSinceLastSpawn += Time.deltaTime;
 
-        if (timerSinceLastSpawn >= spawnRate)
+        if (timerSinceLastSpawn >= spawnRate && drawLine.endGame == false)
         {
             timerSinceLastSpawn = 0;
             float spawnYPosition = Random.Range(objectMin, objectMax);

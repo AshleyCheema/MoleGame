@@ -442,6 +442,7 @@ GameObject:
   - component: {fileID: 803154340}
   - component: {fileID: 803154345}
   - component: {fileID: 803154344}
+  - component: {fileID: 803154347}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -539,6 +540,7 @@ MonoBehaviour:
   velocity: {x: 5, y: 0, z: 0}
   score: {fileID: 717592389}
   gameOverText: {fileID: 546389305}
+  endGame: 0
 --- !u!120 &803154345
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -590,7 +592,7 @@ LineRenderer:
         tangentMode: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
-      m_RotationOrder: 4
+      m_RotationOrder: 0
     colorGradient:
       serializedVersion: 2
       key0: {r: 1, g: 1, b: 1, a: 1}
@@ -622,7 +624,7 @@ LineRenderer:
       m_NumAlphaKeys: 2
     numCornerVertices: 0
     numCapVertices: 0
-    alignment: 0
+    alignment: 1
     textureMode: 1
     generateLightingData: 0
   m_UseWorldSpace: 1
@@ -652,6 +654,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &803154347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 803154339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c52e28c1f4b511c4798ec7ca6b4aef43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectPoolSize: 5
+  objectPrefab: {fileID: 1652921859783034, guid: e984b14e39413e04a8a9aa9fef019b1e,
+    type: 2}
+  spawnRate: 4
+  objectMin: -1
+  objectMax: 3.5
 --- !u!1 &948448946
 GameObject:
   m_ObjectHideFlags: 0
@@ -717,52 +736,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!1 &1020320073
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1020320075}
-  - component: {fileID: 1020320074}
-  m_Layer: 0
-  m_Name: ObjectPooling
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1020320074
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1020320073}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c52e28c1f4b511c4798ec7ca6b4aef43, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectPoolSize: 5
-  objectPrefab: {fileID: 1652921859783034, guid: e984b14e39413e04a8a9aa9fef019b1e,
-    type: 2}
-  spawnRate: 4
-  objectMin: -1
-  objectMax: 3.5
---- !u!4 &1020320075
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1020320073}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1393889406
 GameObject:
   m_ObjectHideFlags: 0

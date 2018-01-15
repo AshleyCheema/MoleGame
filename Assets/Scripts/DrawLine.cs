@@ -15,7 +15,8 @@ public class DrawLine : MonoBehaviour
     public Text score;
     public GameObject gameOverText;
     private float scoreNum = 1;
-    //private int increment = 1;
+    public bool endGame;
+  
 
     LineRenderer line;
     //position data
@@ -29,6 +30,7 @@ public class DrawLine : MonoBehaviour
         line = GetComponent<LineRenderer>();
         points = new List<Vector3>() { transform.position }; //indices 1 - end are solidified points, index 0 is always transform.position
         line.SetPositions(points.ToArray());
+        endGame = false;
     }
 
     void AddPoint(Vector3 position)
@@ -92,6 +94,7 @@ public class DrawLine : MonoBehaviour
         if (collision.gameObject.tag == "Object")
         {
             gameOverText.SetActive(true);
+            endGame = true;
         }
     }
 }
